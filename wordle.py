@@ -25,8 +25,12 @@ victoria = 0
 #input
 while intentos < 7 and victoria != 1:
     inputPalabra = input(str("Palabra de 5 letras: "))
-    intentos += 1
-    victoria = chequeo(palabra, inputPalabra)
+    if len(inputPalabra) < 5 or len(inputPalabra) > 5:
+        print("Debe tener 5 letras")
+    else:
+        inputPalabra = inputPalabra.lower()
+        intentos += 1
+        victoria = chequeo(palabra, inputPalabra)
 
 if intentos == 7:
     print("Perdiste :(")

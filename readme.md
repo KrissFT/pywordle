@@ -7,4 +7,3 @@
 <p>- Cambiar el output para que sea más ordenado</p>
 <p>- Añadir la capacidad de poder usar la palabra del día o múltiples de una lista ajena</p>
 <p>- Añadir verificación de input de palabra válida</p>
-<p>- Añadir validación para la cantidad de letras</p>
