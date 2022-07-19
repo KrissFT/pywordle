@@ -18,21 +18,28 @@ def chequeo (og, word):
             id += 1
             
 intentos = 0
+maximo = 6
 #contenedor de palabra, tal vez podría ser una lista de la que buscar palabras para variarlo
 palabra = "copia"
 victoria = 0
 
 #input
-while intentos < 7 and victoria != 1:
-    inputPalabra = input(str("Palabra de 5 letras: "))
-    if len(inputPalabra) < 5 or len(inputPalabra) > 5:
-        print("Debe tener 5 letras")
+while intentos <= maximo and victoria != 1:
+
+    mensajeInput = "(%d/%d) Palabra de %d letras: "%(intentos+1, maximo, len(palabra))
+
+    inputPalabra = input(str(mensajeInput))
+
+    if len(inputPalabra) != len(palabra):
+        print("Debe tener %d letras"%len(palabra))
     else:
         inputPalabra = inputPalabra.lower()
         intentos += 1
         victoria = chequeo(palabra, inputPalabra)
 
-if intentos == 7:
+if intentos > maximo:
     print("Perdiste :(")
+elif intentos == 1:
+    print("Ganaste en %d intento!"%intentos)
 else:
-    print("Ganaste en", intentos, "intentos!")
+    print("Ganaste en %d intentos!"%intentos)
